@@ -18,7 +18,7 @@ public class ParserCliTest {
 
         parser = new ParserCli();
         parser.parse(new String[]{"-pdfFile", "value"});
-        assertThat("Help option is not present.", parser.hasOptionHelp(), not(true));
+        assertThat("Help option is not present.", parser.hasOptionHelp(), is(false));
     }
 
     @Test
