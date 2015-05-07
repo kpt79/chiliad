@@ -32,7 +32,7 @@ public class Main {
         ParserCli commandLineParser = new ParserCli();
         try {
             commandLineParser.parse(args);
-            if (commandLineParser.hasOptionHelp()) {
+            if (args.length == 0 || commandLineParser.hasOptionHelp()) {
                 commandLineParser.showHelpMessage();
             } else {
                 ChiliadPDFParser giskard = newInstance(commandLineParser);
