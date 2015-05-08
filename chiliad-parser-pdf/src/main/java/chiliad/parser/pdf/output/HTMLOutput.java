@@ -173,7 +173,7 @@ public class HTMLOutput implements ParserOutputWriter {
         s = s.replace("$y", String.valueOf(t.getY()));
         s = s.replace("$w", String.valueOf(t.getWidth()));
         s = s.replace("$h", String.valueOf(t.getHeight()));
-        s = s.replace("$color", htmlColorFormat(t.getNonStrokingColor()));
+        s = s.replace("$color", t.getNonStrokingColor());
         return s;
     }
 
@@ -201,13 +201,6 @@ public class HTMLOutput implements ParserOutputWriter {
 
     private String scale(Double d) {
         return String.valueOf((int) (d * ratioBetweenScreenAndPDFResolution));
-    }
-
-    public final String htmlColorFormat(Color c) {
-        String r = (c.getRed() < 16) ? "0" + Integer.toHexString(c.getRed()) : Integer.toHexString(c.getRed());
-        String g = (c.getGreen() < 16) ? "0" + Integer.toHexString(c.getGreen()) : Integer.toHexString(c.getGreen());
-        String b = (c.getBlue() < 16) ? "0" + Integer.toHexString(c.getBlue()) : Integer.toHexString(c.getBlue());
-        return "#" + r + g + b;
     }
 
 }

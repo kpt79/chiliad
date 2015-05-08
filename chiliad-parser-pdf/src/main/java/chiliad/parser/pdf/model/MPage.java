@@ -21,8 +21,9 @@ import java.util.List;
 
 public class MPage implements Serializable {
 
-    private static final long serialVersionUID = 625306993560294227L;
-    private String sourceId;
+    
+	private static final long serialVersionUID = -1191620025906163157L;
+	private String sourceId;
     private Integer pageNumber;
     private Double width;
     private Double height;
@@ -32,6 +33,7 @@ public class MPage implements Serializable {
 
     public static MPage newInstance(String sourceId, Integer pageNumber, Double width, Double height) {
         MPage p = new MPage();
+        p.sourceId = sourceId;
         p.pageNumber = pageNumber;
         p.width = width;
         p.height = height;
