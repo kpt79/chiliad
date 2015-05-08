@@ -97,8 +97,8 @@ public class TextExtractor extends PDFStreamEngine implements PageExtractor {
         mToken.setFontName(token.getFontName());
         mToken.setFontSizeInPt(token.getFontSizeInPt());
         mToken.setFontWeight(token.getFontWeight());
-        mToken.setNonStrokingColor(token.getNonStrokingColor());
-        mToken.setStrokingColor(token.getStrokingColor());
+        mToken.setNonStrokingColor(MToken.colorToRgba(token.getNonStrokingColor()));
+        mToken.setStrokingColor(MToken.colorToRgba(token.getStrokingColor()));
         mToken.setX(token.getPositionStartX());
         mToken.setY(token.getPositionStartY());
         mToken.setWidth(token.getWidth());
