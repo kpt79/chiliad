@@ -45,7 +45,6 @@ public class JSONOutput implements ParserOutputWriter {
     @Override
     public void startDocument(PDDocument document) {
         try {
-            //gen.writeStartObject();
             gen.writeStartArray();
         } catch (IOException ex) {
             throw new ParserOutputException("Failed to writer JSON output.", ex);
@@ -54,12 +53,6 @@ public class JSONOutput implements ParserOutputWriter {
 
     @Override
     public void startPage(PDPage page) {
-//        try {
-//            gen.writeStartObject();//page
-//        } catch (IOException ex) {
-//            throw new ParserOutputException("Failed to writer JSON output.", ex);
-//        }
-
     }
 
     @Override
@@ -71,47 +64,16 @@ public class JSONOutput implements ParserOutputWriter {
 		} catch (IOException e) {
 			throw new ParserOutputException("Failed to writer JSON output.", e);
 		}
-//        try {
-//            gen.writeNumberField("pageNumber", page.getPageNumber());
-//
-//            gen.writeArrayFieldStart("tokens");
-//            page.getTokens().forEach(t -> {
-//                try {
-//                    mapper.writeValue(gen, t);
-//                } catch (IOException ex) {
-//                    throw new ParserOutputException("Failed to write JSON output.", ex);
-//                }
-//            });
-//            gen.writeEndArray();
-//
-//            gen.writeArrayFieldStart("images");
-//            page.getImages().forEach(img -> {
-//                try {
-//                    mapper.writeValue(gen, img);
-//                } catch (IOException ex) {
-//                    throw new ParserOutputException("Failed to write JSON output.", ex);
-//                }
-//            });
-//            gen.writeEndArray();
-//        } catch (IOException ex) {
-//            throw new ParserOutputException("Failed to writer JSON output.", ex);
-//        }
     }
 
     @Override
     public void endPage(PDPage page) {
-//        try {
-//            gen.writeEndObject();//page
-//        } catch (IOException ex) {
-//            throw new ParserOutputException("Failed to writer JSON output.", ex);
-//        }
     }
 
     @Override
     public void endDocument(PDDocument document) {
         try {
             gen.writeEndArray();//pages
-            //gen.writeEndObject();
             gen.close();
         } catch (IOException ex) {
             throw new ParserOutputException("Failed to writer JSON output.", ex);
