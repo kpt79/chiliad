@@ -27,7 +27,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.slf4j.LoggerFactory;
 
-//TODO kpt externalize to a template
+//TODO generate html by stax
 public class HTMLOutput implements ParserOutputWriter {
 
     final static org.slf4j.Logger LOG = LoggerFactory.getLogger(HTMLOutput.class);
